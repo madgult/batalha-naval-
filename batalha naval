@@ -1,0 +1,313 @@
+board = []
+boardS = []
+
+
+def portaAvioes(campo):
+    #PORTA-AVIÕES
+    print("Posicione seu porta-avião!")
+    linha = int(input("Linha do porta-aviões: "))
+    coluna = int(input("Coluna do porta-aviões: "))
+    direcao = input("Digite V para vertical ou H para horizontal: ")
+
+    cabe = True
+    temBarco = False
+    if direcao == "H" or direcao == "h":
+        aux = coluna
+        if (aux + 4) < 40:
+            cabe = False
+        while (not temBarco) and (aux <= coluna + 4):
+            if campo[linha][aux] not in ["+", "-"]:
+                temBarco = True
+                aux += 1
+
+
+    if direcao == "V" or direcao == "v":
+        aux = linha
+        if (aux + 4) < 40:
+            cabe = False
+        while (not temBarco) and (aux <= linha + 4):
+            if campo[aux][coluna] not in ["+", "-"]:
+                temBarco = True
+                aux += 1
+
+    if cabe and not temBarco:
+        if direcao == "V" or direcao == "v": ##POSICIONA O PORTA-AVIÕES NA VERTICAL
+            campo[linha][coluna] = "5"
+            campo[linha + 1][coluna] = "5"
+            campo[linha + 2][coluna] = "5"
+            campo[linha + 3][coluna] = "5"
+            campo[linha + 4][coluna] = "5"
+
+        elif direcao == "H" or direcao == "h": #POSICIONA O PORTA-AVIÕES NA HORIZONTAL
+            campo[linha][coluna] = "5"
+            campo[linha][coluna + 1] = "5"
+            campo[linha][coluna + 2] = "5"
+            campo[linha][coluna + 3] = "5"
+            campo[linha][coluna + 4] = "5"
+
+
+def encouraçado(campo):
+    #ENCOURAÇADO
+    print("Posicione seu encouraçado!")
+    linha = int(input("Linha do encouraçado: "))
+    coluna = int(input("Coluna do encouraçado: "))
+    direcao = input("Digite V para vertical ou H para horizontal: ")
+
+    cabe = True
+    temBarco = False
+    if direcao == "H" or direcao == "h":
+        aux = coluna
+        if (aux + 3) < 40:
+            cabe = False
+        while (not temBarco) and (aux <= coluna + 3):
+            if campo[linha][aux] not in ["+", "-"]:
+                temBarco = True
+                aux += 1
+
+    if direcao == "V" or direcao == "v":
+        aux = linha
+        if (aux + 3) < 40:
+            cabe = False
+        while (not temBarco) and (aux <= linha + 3):
+            if campo[aux][coluna] not in ["+", "-"]:
+                temBarco = True
+                aux += 1
+
+    if cabe and not temBarco:
+        if direcao == "V"  or direcao == "v": #POSICIONA O ENCOURAÇADO NA VERTICAL
+            campo[linha][coluna] = "4"
+            campo[linha + 1][coluna] = "4"
+            campo[linha + 2][coluna] = "4"
+            campo[linha + 3][coluna] = "4"
+            campo[linha + 4][coluna] = "4"
+
+        if direcao == "H" or direcao == "h": #POSICIONA O ENCOURAÇADO NA HORIZONTAL
+            campo[linha][coluna] = "4"
+            campo[linha][coluna + 1] = "4"
+            campo[linha][coluna + 2] = "4"
+            campo[linha][coluna + 3] = "4"
+
+
+def submarino(campo):
+    #SUBMARINO
+    print("Posicione seu submarino!")
+    linha = int(input("Linha do submarino: "))
+    coluna = int(input("Coluna do submarino: "))
+    direcao = input("Digite V para vertical ou H para horizontal: ")
+
+    cabe = True
+    temBarco = False
+    if direcao == "H" or direcao == "h":
+        aux = coluna
+        if (aux + 2) < 40:
+            cabe = False
+        while (not temBarco) and (aux <= coluna + 2):
+            if campo[linha][aux] not in ["+", "-"]:
+                temBarco = True
+                aux += 1
+
+
+    if direcao == "V" or direcao == "v":
+        aux = linha
+        if (aux + 2) < 40:
+            cabe = False
+        while (not temBarco) and (aux <= linha + 2):
+            if campo[aux][coluna] not in ["+", "-"]:
+                temBarco = True
+                aux += 1
+                
+
+
+    if cabe and not temBarco:
+        if direcao == "V" or direcao == "v": #POSICIONA O SUBMARINO NA VERTICAL
+            campo[linha][coluna] = "3"
+            campo[linha + 1][coluna] = "3"
+            campo[linha+ 2][coluna] = "3"
+
+        if VerticalSub1 == "H"or VerticalSub1 == "h": #POSICIONA O SUBMARINO NA HORIZONTAL
+            campo[linha][coluna] = "3"
+            campo[linha][coluna + 1] = "3"
+            campo[linha][coluna + 2] = "3"
+
+
+def destroyer(campo):
+    #DESTROYER
+    print("Posicione seu destroyer!")
+    linha = int(input("Linha do destroyer: "))
+    coluna = int(input("Coluna do destroyer: "))
+    direcao = input("Digite V para vertical ou H para horizontal: ")
+
+    cabe = True
+    temBarco = False
+    if direcao == "H" or direcao == "h":
+        aux = coluna
+        if (aux + 2) < 40:
+            cabe = False
+        while (not temBarco) and (aux <= coluna + 2):
+            if campo[linha][aux] not in ["+", "-"]:
+                temBarco = True
+                aux += 1
+                
+
+    if direcao == "V" or direcao == "v":
+        aux = linha
+        if (aux + 2) < 40:
+            cabe = False
+        while (not temBarco) and (aux <= linha + 2):
+            if campo[aux][coluna] not in ["+", "-"]:
+                temBarco = True
+                aux += 1
+                
+
+
+    if cabe and not temBarco:
+        if direcao == "V" or direcao == "v":#POSICIONA O DESTROYER NA VERTICAL
+            campo[linha][coluna] = "3"
+            campo[linha + 1][coluna] = "3"
+            campo[linha + 2][coluna] = "3"
+
+        if direcao == "H"or direcao == "h":#POSICIONA O DESTROYER NA HORIZONTAL
+            campo[linha][coluna] = "3"
+            campo[linha][coluna + 1] = "3"
+            campo[linha][coluna + 2] = "3"
+
+
+def barcoPatrulha(campo):
+    #BARCO DE PATRULHA
+    print("Posicione seu barco de patrulha!")
+    linha = int(input("Linha do barco de patrulha: "))
+    coluna = int(input("Coluna do barco de patrulha: "))
+    direcao = input("Digite V para vertical ou H para horizontal: ")
+
+    cabe = True
+    temBarco = False
+    if direcao == "H" or direcao == "h":
+        aux = coluna
+        if (aux + 1) < 40:
+            cabe = False
+        while (not temBarco) and (aux <= coluna + 1):
+            if campo[linha][aux] not in ["+", "-"]:
+                temBarco = True
+                aux += 1
+                
+
+
+    if direcao == "V" or direcao == "v":
+        aux = linha
+        if (aux + 1) < 40:
+            cabe = False
+        while (not temBarco) and (aux <= linha + 1):
+            if campo[aux][coluna] not in ["+", "-"]:
+                temBarco = True
+                aux += 1
+                
+
+
+    if cabe and not temBarco:
+        if direcao == "V" or direcao == "v":#POSICIONA O BARCO DE PATRULHA NA VERTICAL
+            campo[linha][coluna] = "2"
+            campo[linha + 1][coluna] = "2"
+
+        if direcao == "H" or direcao == "h":#POSICIONA O BARCO DE PATRULHA NA HORIZONTAL
+            campo[linha][coluna] = "2"
+            campo[linha][coluna + 1] = "2"
+
+    
+
+def jogo1(): #PRIMEIRO JOGADOR
+    for x in range(1, 41):
+        board.append(["+"] * 40)
+    print("Para começar o jogo, o jogador 1 irá posicionar seus navios")
+    print("Cada jogador terá direito a posicionar os seguintes navios: um porta-aviões (comprimento 5), um encouraçado (comprimento 4), um submarino e um destroyer (ambos de comprimento 3), e um barco de patrulha (comprimento 2)")
+
+    portaAvioes(board)
+    encouracado(board)
+    submarino(board)
+    destroyer(board)
+    barcoPatrulha(board)
+   
+
+def jogo2(): #SEGUNDO JOGADOR
+    for x in range(1, 41):
+        boardS.append(["-"] * 40)
+
+    portaAvioes(boardS)
+    encouracado(boardS)
+    submarino(boardS)
+    destroyer(boardS)
+    barcoPatrulha(boardS)
+   
+
+
+def print_board(board): ###PRINTAR O PRIMEIRO TABULEIRO
+   
+    for row in board:
+        print((" ").join(row))
+       
+def print_boardS(boardS): ###PRINTAR O SEGUNDO TABULEIRO
+   
+    for row in boardS:
+        print((" ").join(row))
+
+
+   
+def ataqueinimigo():
+    global LinhaAtaque1
+    global LinhaAtaque2
+    global ColunaAtaque1
+    global ColunaAtaque2
+    print("Jogador 2, sua hora de atacar!")        
+    LinhaAtaque2 = int(input("Linha do ataque: "))
+    ColunaAtaque2 = int(input("Coluna do ataque: "))
+    if board[LinhaAtaque2][ColunaAtaque2] != "+":
+        print("Você atingiu um navio!!!!!!!!")
+        board[LinhaAtaque2][ColunaAtaque2] = "X"
+    elif board[LinhaAtaque2][ColunaAtaque2] == "+":
+        print("Você errou o ataque!!!!!!!!")
+        print("O campo do jogador 2 está assim:")
+       
+    print_boardS(boardS)
+
+               
+def ataquealiado():
+    global LinhaAtaque1
+    global LinhaAtaque2
+    global ColunaAtaque1
+    global ColunaAtaque2
+    print("Jogador 1, sua hora de atacar!")        
+    LinhaAtaque1 = int(input("Linha do ataque: "))
+    ColunaAtaque1 = int(input("Coluna do ataque: "))
+    if boardS[LinhaAtaque1][ColunaAtaque1] != "-":
+        print("Você atingiu um navio!!!!!!!!")
+        boardS[LinhaAtaque1][ColunaAtaque1] = "X"
+     
+       
+    elif boardS[LinhaAtaque1][ColunaAtaque1] == "-":
+         print("Você errou o ataque!!!!!!!!")
+     
+    print("O campo do jogador 1 está assim: ")
+    print_board(board)
+
+   
+def ataques():
+    ataquealiado()
+    ataqueinimigo()
+
+   
+def vitoria():
+    for j in range(len(board)):
+        for k in range(len(board)):
+            if board[j][k] == 0:
+                print("JOGADOR 2 GANHOU. PARABÉNS!!!!!!!!!!!")
+                exit(1)
+    for j in range(len(boardS)):
+        for k in range(len(boardS)):
+            if boardS[j][k] == 0:
+                print("JOGADOR 1 GANHOU. PARABÉNS!!!!!!!!!!!")
+                exit(1)
+
+jogo1()
+print ("JOGADOR 2, AGORA É SUA VEZ!")
+jogo2()
+ataques()
+vitoria()
